@@ -18,7 +18,7 @@ const BarraLateral = () => {
             iconeInativo="/icones/home-inativo.png"
             ativo={true}
           >
-            Inicio
+            Início
           </ItemNavegacao>
           <ItemNavegacao
             iconeAtivo="/icones/mais-vistas-ativo.png"

@@ -8,6 +8,7 @@ const ItemListaEstilizado = styled.li`
   display: flex;
   align-items: center;
   gap: 22px;
+  font-family: ${props => props.$ativo ? "GandhiSansBold" : "GandhiSansRegular"};
   color: ${(props) => (props.$ativo ? "#7B78E5" : "#D9D9D9")};
 `;
 
