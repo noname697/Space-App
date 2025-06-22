@@ -16,6 +16,7 @@ const CampoTextoEstilizado = styled.div`
     font-weight: 400;
     font-size: 20px;
     line-height: 20px;
+    color: #D9D9D9;
     &::placeholder {
       color: #d9d9d9;
       line-height: 20px;
