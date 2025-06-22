@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import search from "./search.png";
 
 const CampoTextoEstilizado = styled.div`
   position: relative;
@@ -34,7 +35,7 @@ const CampoTexto = (props) => {
   return (
     <CampoTextoEstilizado>
       <input placeholder="O que você procura?" {...props} />
-      <img src="/imagens/search.png" alt="ícone de lupa" />
+      <img src={search} alt="ícone de lupa" />
     </CampoTextoEstilizado>
   );
 };
