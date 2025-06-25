@@ -9,7 +9,6 @@ import fotos from "./fotos.json";
 import { useState } from "react";
 import ModalZoom from "./componentes/ModalZoom";
 
-
 const FundoGradiente = styled.div`
   background: linear-gradient(
     174.61deg,
@@ -39,7 +38,8 @@ const ConteudoGaleria = styled.section`
 `;
 
 const App = () => {
-  const [fotosDaGaleria, setFotosDaGaleria] = useState(fotos)
+  const [fotosDaGaleria, setFotosDaGaleria] = useState(fotos);
+  const [fotoSelecionada, setFotoSelecionada] = useState(null);
   return (
     <FundoGradiente>
       <EstilosGlobais />
@@ -52,13 +52,16 @@ const App = () => {
               texto="A galeria mais completa de fotos do espaço!"
               backgroundImage={bannerBackground}
             />
-            <Galeria fotos={fotosDaGaleria}/>
+            <Galeria
+              aoFotoSelecionada={(foto) => setFotoSelecionada(foto)}
+              fotos={fotosDaGaleria}
+            />
           </ConteudoGaleria>
         </MainContainer>
       </AppContainer>
-      <ModalZoom />
+      <ModalZoom foto={fotoSelecionada} />
     </FundoGradiente>
   );
-}
+};
 
 export default App;
