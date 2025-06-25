@@ -7,6 +7,7 @@ import bannerBackground from "./assets/banner.png";
 import Galeria from "./componentes/Galeria";
 import fotos from "./fotos.json";
 import { useState } from "react";
+import ModalZoom from "./componentes/ModalZoom";
 
 
 const FundoGradiente = styled.div`
@@ -55,6 +56,7 @@ const App = () => {
           </ConteudoGaleria>
         </MainContainer>
       </AppContainer>
+      <ModalZoom />
     </FundoGradiente>
   );
 }
