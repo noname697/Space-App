@@ -51,7 +51,7 @@ const Imagem = ({ foto, expandida = false, aoZoomSolicitado }) => {
           {!expandida && (
             <BotaoIcone
               aria-hidden={expandida}
-              onClick={(foto) => aoZoomSolicitado(foto)}
+              onClick={() => aoZoomSolicitado(foto)}
             >
               <img src="/icones/expandir.png" alt="Icone de expandir" />
             </BotaoIcone>
