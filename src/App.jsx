@@ -42,6 +42,12 @@ const App = () => {
   const [fotoSelecionada, setFotoSelecionada] = useState(null);
 
   const aoAlternarFavorito = (foto) => {
+    if (foto.id === fotoSelecionada?.id) {
+      setFotoSelecionada({
+        ...fotoSelecionada,
+        favorita: !fotoSelecionada.favorita,
+      });
+    }
     setFotosDaGaleria(
       fotosDaGaleria.map((fotoDaGaleria) => {
         return {
@@ -76,6 +82,7 @@ const App = () => {
         </MainContainer>
       </AppContainer>
       <ModalZoom
+        aoAlternarFavorito={aoAlternarFavorito}
         foto={fotoSelecionada}
         aoFechar={() => setFotoSelecionada(null)}
       />
