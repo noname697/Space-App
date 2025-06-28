@@ -34,9 +34,9 @@ const Footer = () => {
     <FooterEstilizado>
       <ul>
         {listaRedesSociais.map((rede) => (
-            <a href="">
-                <img src={rede} alt="rede-social" />
-            </a>
+          <a key={rede} href="">
+            <img src={rede} alt="rede-social" />
+          </a>
         ))}
       </ul>
       <p>Desenvolvido por Arthur Manenti.</p>

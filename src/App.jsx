@@ -62,6 +62,18 @@ const App = () => {
     );
   };
 
+  const filtrarPorTag = (filtro) => {
+    if (filtro.id === 0) {
+      setFotosDaGaleria(fotos);
+    } else {
+      setFotosDaGaleria(
+        fotos.filter((foto) => {
+          return foto.tagId === filtro.id;
+        })
+      );
+    }
+  };
+
   return (
     <FundoGradiente>
       <EstilosGlobais />
@@ -75,6 +87,7 @@ const App = () => {
               backgroundImage={bannerBackground}
             />
             <Galeria
+              filtrarPorTag={filtrarPorTag}
               aoFotoSelecionada={(foto) => setFotoSelecionada(foto)}
               aoAlternarFavorito={aoAlternarFavorito}
               fotos={fotosDaGaleria}
@@ -87,7 +100,7 @@ const App = () => {
         foto={fotoSelecionada}
         aoFechar={() => setFotoSelecionada(null)}
       />
-    <Footer />
+      <Footer />
     </FundoGradiente>
   );
 };
