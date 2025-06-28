@@ -10,11 +10,11 @@ const HeaderEstilizado = styled.header`
   }
 `;
 
-const Cabecalho = () => {
+const Cabecalho = ({ filtroPorPesquisa }) => {
   return (
     <HeaderEstilizado>
-      <img src="/imagens/logo.png" alt=""/>
-      <CampoTexto />
+      <img src="/imagens/logo.png" />
+      <CampoTexto filtroPorPesquisa={filtroPorPesquisa} />
     </HeaderEstilizado>
   );
 };

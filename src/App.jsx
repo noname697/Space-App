@@ -74,11 +74,20 @@ const App = () => {
     }
   };
 
+  const filtroPorPesquisa = (textoDigitado) => {
+    setFotosDaGaleria(
+      fotos.filter((foto) =>
+        foto.titulo.toLowerCase().includes(textoDigitado.toLowerCase())
+      )
+    );
+    console.log(fotosDaGaleria);
+  };
+
   return (
     <FundoGradiente>
       <EstilosGlobais />
       <AppContainer>
-        <Cabecalho />
+        <Cabecalho filtroPorPesquisa={filtroPorPesquisa} />
         <MainContainer>
           <BarraLateral />
           <ConteudoGaleria>

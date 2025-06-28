@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import search from "./search.png";
+import { useState } from "react";
 
 const CampoTextoEstilizado = styled.div`
   position: relative;
@@ -16,7 +17,7 @@ const CampoTextoEstilizado = styled.div`
     font-weight: 400;
     font-size: 20px;
     line-height: 20px;
-    color: #D9D9D9;
+    color: #d9d9d9;
     &::placeholder {
       color: #d9d9d9;
       line-height: 20px;
@@ -32,11 +33,19 @@ const CampoTextoEstilizado = styled.div`
   }
 `;
 
-const CampoTexto = (props) => {
+const CampoTexto = ({filtroPorPesquisa}) => {
+  const [textoDigitado, setTextoDigitado] = useState("");
   return (
     <CampoTextoEstilizado>
-      <input placeholder="O que você procura?" {...props} />
-      <img src={search} alt="ícone de lupa" />
+      <input
+        placeholder="O que você procura?"
+        onChange={(e) => setTextoDigitado(e.target.value)}
+      />
+      <img
+        src={search}
+        alt="ícone de lupa"
+        onClick={() => filtroPorPesquisa(textoDigitado)}
+      />
     </CampoTextoEstilizado>
   );
 };
